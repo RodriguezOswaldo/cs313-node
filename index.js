@@ -3,6 +3,7 @@ const express = require('express')
 var bodyParser = require("body-parser");
 const path = require('path')
 const PORT = process.env.PORT || 5000
+var file = require("./logic.js");
 
 express()
   .use(bodyParser.urlencoded({extended: true}))
@@ -12,12 +13,7 @@ express()
   .get('/', (req, res) => res.render('pages/index'))
   .get('/cool', (req, res) => res.send(cool()))
   .get('/home', getData)
-  .post('/calculate', function calculate(req, res){
-    console.log('you are in here actually');
-    res.render('pages/price');
-    res.end();
-    // res.render('pages/price');
-  })
+  .post('/calculate', calculate )
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
   // function calculate(req, res){
@@ -26,5 +22,18 @@ express()
   // }
   function getData(req, res){
     console.log('You are here!');
-    res.render('pages/home');
+    var data = req.body;
+    res.render('pages/home', { weight: "", type: ""});
+  }
+  
+  function calculate(req, res){
+    var data = req.body;
+    console.log('you are in here actually');
+    console.log(data.weight);
+    console.log(data.type);
+    var test1 = file.test1(data.weight, data.type);
+    console.log(test1);
+    res.render('pages/price',{weight: data.weight, type: data.type});
+    res.end();
+    // res.render('pages/price');
   }
