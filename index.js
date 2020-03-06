@@ -11,9 +11,13 @@ express()
   .get('/', (req, res) => res.render('pages/index'))
   .get('/cool', (req, res) => res.send(cool()))
   .get('/home', HelloWorld)
+  .get('/calculate', calculate)
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
-
+  function calculate(req, res){
+    console.log('you are in here actually');
+    res.render('pages/price');
+  }
   function HelloWorld(req, res){
     console.log('You are here!');
     res.render('pages/home');
