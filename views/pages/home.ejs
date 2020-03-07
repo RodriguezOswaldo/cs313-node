@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Shipment</title>
+    <link rel="shortcut icon" href="icon.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/css/foundation.min.css" integrity="sha256-GSio8qamaXapM8Fq9JYdGNTvk/dgs+cMLgPeevOYEx0= sha384-wAweiGTn38CY2DSwAaEffed6iMeflc0FMiuptanbN4J+ib+342gKGpvYRWubPd/+ sha512-QHEb6jOC8SaGTmYmGU19u2FhIfeG+t/hSacIWPpDzOp5yygnthL3JwnilM7LM1dOAbJv62R+/FICfsrKUqv4Gg==" crossorigin="anonymous">
     <style>
         body{
@@ -17,9 +18,9 @@
     <h2>Yo Bro! Weight: <%- weight %> Type: <%- type %></h2>
     <form method="post" action="/calculate">
         <label id="weight">Weight in pounds</label>
-        <input type="number" name="weight" id="weight">
+        <input type="number" name="weight" required id="weight">
         <label id="type">Type:</label>
-        <select name="type" id="type">
+        <select name="type" id="type" required>
             <option value="default">Select One</option>
             <option value="stamped">Letters (Stamped)</option>
             <option value="mettered">Letters (Mettered)</option>
