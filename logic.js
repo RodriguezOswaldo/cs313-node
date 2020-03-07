@@ -1,6 +1,5 @@
 exports.test1 = function(weight, type){
     var price = "";
-<<<<<<< HEAD
     switch (type) {
         case 'stamped':
         if(weight > 0 && weight < 12){
@@ -38,9 +37,6 @@ exports.test1 = function(weight, type){
     // if(weight > 0 && type == 'mettered')
     // if(weight > 0 && type == 'envelopes')
     // if(weight > 0 && type == 'firstclass')
-=======
-
->>>>>>> 52de9db015ff41b431b1bcba30957897d99baa43
     console.log('got it!');
     console.log(weight);
     console.log(type);

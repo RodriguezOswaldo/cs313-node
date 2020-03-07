@@ -26,10 +26,6 @@ express()
     var data = req.body; 
     var test1 = file.test1(data.weight, data.type);
     console.log(test1);
-<<<<<<< HEAD
     res.render('pages/price',{weight: data.weight, type: data.type, price: test1});
-=======
-    res.render('pages/price',{weight: data.weight, type: data.type});
->>>>>>> 52de9db015ff41b431b1bcba30957897d99baa43
     res.end();
   }
