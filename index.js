@@ -13,13 +13,9 @@ express()
   .get('/', (req, res) => res.render('pages/index'))
   .get('/cool', (req, res) => res.send(cool()))
   .get('/home', getData)
-  .post('/calculate', calculate )
+  .post('/calculate', calculate)
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
-  // function calculate(req, res){
-  //   console.log('you are in here actually');
-  //   res.render('pages/price');
-  // }
   function getData(req, res){
     console.log('You are here!');
     var data = req.body;
@@ -27,13 +23,9 @@ express()
   }
   
   function calculate(req, res){
-    var data = req.body;
-    console.log('you are in here actually');
-    console.log(data.weight);
-    console.log(data.type);
+    var data = req.body; 
     var test1 = file.test1(data.weight, data.type);
     console.log(test1);
     res.render('pages/price',{weight: data.weight, type: data.type});
     res.end();
-    // res.render('pages/price');
   }
